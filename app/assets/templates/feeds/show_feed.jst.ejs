@@ -7,6 +7,18 @@
 </p>
 <p>
 	<button id="refresh">Refresh</button>	
+	<a href="#/">Back</a>
 </p>
 
 <hr />
+
+<h3>Feed Entries</h3>
+<ul>
+	<% feed.entries.each(function (entry) { %>
+		<li>
+			<a href="<%= entry.escape('link') %> ">
+				<%= entry.escape('title')%>
+			</a>
+		</li>
+	<% })%>
+</ul>

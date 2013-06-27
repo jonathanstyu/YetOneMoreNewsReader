@@ -12,7 +12,7 @@ NewReader.Views.FeedShow = Backbone.View.extend({
   template: JST['feeds/show_feed'], 
 	
 	render: function () {
-
+		console.log(this.model.entries); 
 		var content = this.template({
 			feed: this.model
 		}); 
