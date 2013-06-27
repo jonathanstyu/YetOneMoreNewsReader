@@ -7,6 +7,9 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'simple-rss'
+gem 'backbone-on-rails'
+gem 'ejs'
+gem 'underscore'
 require 'open-uri'
 
 # Gems used only for assets and not required
@@ -36,4 +39,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
