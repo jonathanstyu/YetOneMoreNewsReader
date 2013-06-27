@@ -1,0 +1,16 @@
+<h3>What is going on?</h3>
+<hr />
+<% feeds.each(function (feed) { %>
+
+	<ul>
+		<% url = "#/feed/" + feed.escape('id') %>
+		<a href=<%= url %> >
+			<%= feed.escape('title') %>	
+		</a>
+		
+	</ul>
+
+
+<% });  %>
+
+
