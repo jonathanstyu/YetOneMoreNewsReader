@@ -4,7 +4,7 @@ window.NewReader = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+		alert("Hello there")
   }
 };
 
