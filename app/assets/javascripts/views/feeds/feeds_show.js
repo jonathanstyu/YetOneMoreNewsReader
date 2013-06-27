@@ -12,11 +12,21 @@ NewReader.Views.FeedShow = Backbone.View.extend({
   template: JST['feeds/show_feed'], 
 	
 	render: function () {
-		console.log(this.model.entries); 
+		var that = this; 
 		var content = this.template({
 			feed: this.model
 		}); 
-		this.$el.html(content); 
+		
+		// Hands it off to the entries
+		var entryview = new NewReader.Views.EntriesIndex({
+			collection: that.model.entries
+		}); 
+		var entries_content = entryview.render().$el.html()
+		
+		// Merge the two together and ship them together
+		$(content).append(entries_content); 
+
+		this.$el.html(content + entries_content); 
 		return this; 
 	}, 
 	

@@ -3,6 +3,7 @@ class FeedsController < ApplicationController
   
   def index
     @feeds = @current_user.feeds 
+    @feeds.each {|feed| feed.reload }
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @feeds.as_json(:include => :entries) }

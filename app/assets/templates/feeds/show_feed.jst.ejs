@@ -13,12 +13,5 @@
 <hr />
 
 <h3>Feed Entries</h3>
-<ul>
-	<% feed.entries.each(function (entry) { %>
-		<li>
-			<a href="<%= entry.escape('link') %> ">
-				<%= entry.escape('title')%>
-			</a>
-		</li>
-	<% })%>
-</ul>
+<div id="entries">
+</div>
