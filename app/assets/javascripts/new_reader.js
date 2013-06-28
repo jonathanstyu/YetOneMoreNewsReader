@@ -9,6 +9,7 @@ window.NewReader = {
 		NewReader.Store.feeds.fetch({
 			success: function () {
 				
+				// This is how you keep this view isolated in its own box
 				$('#sidebar').html(new NewReader.Views.FeedsIndex({collection: NewReader.Store.feeds}).render().$el); 
 				
 				new NewReader.Routers.Feeds({
