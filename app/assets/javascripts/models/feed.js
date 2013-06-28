@@ -1,8 +1,8 @@
 NewReader.Models.Feed = Backbone.Model.extend({
 
-	parse: function (response) {
+	parse: function (response) { 
 
-		var entries = new NewReader.Collections.Entries(); 
+		var entries = new NewReader.Collections.Entries(response.id); 
 		_.each(response.entries, function (entry) {
 			var entry = new NewReader.Models.Entry(entry); 
 			entries.add(entry); 

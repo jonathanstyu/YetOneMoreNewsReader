@@ -8,8 +8,11 @@ window.NewReader = {
 		NewReader.Store.feeds = new NewReader.Collections.Feeds(); 
 		NewReader.Store.feeds.fetch({
 			success: function () {
+				
+				$('#sidebar').html(new NewReader.Views.FeedsIndex({collection: NewReader.Store.feeds}).render().$el); 
+				
 				new NewReader.Routers.Feeds({
-					"$rootelement": $('#content')
+					"$rootelement": $('#main')
 				}); 
 				Backbone.history.start(); 
 			}

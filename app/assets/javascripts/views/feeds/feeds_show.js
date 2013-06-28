@@ -31,7 +31,13 @@ NewReader.Views.FeedShow = Backbone.View.extend({
 	}, 
 	
 	refresh: function () {
-		console.log("hello there"); 
+		// console.log(this.model.entries.render()); 
+		this.model.entries.fetch({
+			success: function (model, response) {
+				console.log(model); 
+				console.log(response);
+			}
+		}); 
 	}
 
 });

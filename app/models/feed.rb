@@ -34,6 +34,14 @@ class Feed < ActiveRecord::Base
           Entry.create_from_json!(entry_data, self)
         end
       end
+      
+      # dates = Entry.pluck(:published_at).sort
+      # feed_data.entries.each do |entry_data|
+      #   if entry_data[:pubDate] > dates.last
+      #     Entry.create_from_json!(entry_data, self)
+      #     
+      #   end
+      # end
 
       self
     rescue SimpleRSSError
